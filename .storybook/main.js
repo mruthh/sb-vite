@@ -1,3 +1,5 @@
+import dog from './lib.js'
+
 module.exports = {
   "stories": [
     "../stories/**/*.stories.mdx",
@@ -10,5 +12,6 @@ module.exports = {
   "framework": "@storybook/vue3",
   "core": {
     "builder": "storybook-builder-vite"
-  }
+  },
+  "dog": dog()
 }
