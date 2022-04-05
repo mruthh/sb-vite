@@ -1,4 +1,4 @@
-import dog from './lib.js'
+const { dog } = require('../lib.js')
 
 module.exports = {
   "stories": [
