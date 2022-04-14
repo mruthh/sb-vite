@@ -1,0 +1,3 @@
+{
+  dog: require('./lib').dog()
+}
