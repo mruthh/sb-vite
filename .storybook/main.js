@@ -1,17 +1,17 @@
-import dog from './lib.js'
+const { loadConfigFromFile } = require('vite')
+const path = require('path')
 
 module.exports = {
   "stories": [
     "../stories/**/*.stories.mdx",
     "../stories/**/*.stories.@(js|jsx|ts|tsx)"
   ],
-  "addons": [
-    "@storybook/addon-links",
-    "@storybook/addon-essentials"
-  ],
   "framework": "@storybook/vue3",
   "core": {
     "builder": "storybook-builder-vite"
   },
-  "dog": dog()
+  async viteFinal(prevConfig) {
+    const { config } = await loadConfigFromFile(path.resolve(__dirname, '../vite.config.js'))
+    return { ...prevConfig, ...config }
+  }
 }
