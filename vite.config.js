@@ -1,1 +1,3 @@
-{}
+{
+  dog: require('./lib').dog()
+}
